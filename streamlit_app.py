@@ -36,7 +36,7 @@ if ingredients_list and name_on_order:
     ingredients_string = " ".join(ingredients_list)
 
     for fruit_chosen in ingredients_list:
-        ingredients_string.strip() += fruit_chosen + ' '
+        ingredients_string += fruit_chosen + ' '
         search_on=pd_df.loc[pd_df['FRUIT_NAME'] == fruit_chosen, 'SEARCH_ON'].iloc[0]
         st.write('The search value for ', fruit_chosen,' is ', search_on, '.')
         st.subheader(fruit_chosen + ' Nutrition Information')
@@ -54,7 +54,7 @@ if ingredients_list and name_on_order:
         st.success(f"Your Smoothie is ordered, {name_on_order}!", icon="✅")
 
  
-smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")  
+#smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")  
 #st.text(smoothiefroot_response.json())
 
 
