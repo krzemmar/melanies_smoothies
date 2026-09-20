@@ -1,13 +1,14 @@
 # Import python packages
 import streamlit as st
 import os
-from snowflake.snowpark.context import get_active_session
+#from snowflake.snowpark.context import get_active_session
 from snowflake.snowpark.functions import col
 
-session = get_active_session()
+#session = get_active_session()
 
 
-
+cnx = st.connection("snowflake")
+session = cnx.session()
 
 st.title(":cup_with_straw: Customize Your Smoothie! :cup_with_straw:")
 st.write("Choose the fruits you want in your custom Smoothie!")
